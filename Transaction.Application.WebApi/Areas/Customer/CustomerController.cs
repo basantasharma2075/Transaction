@@ -60,20 +60,20 @@ namespace Transaction.Application.WebApi.Areas.Customer
 
 
 
-        //      [HttpGet]
-        /*   public IActionResult AllCustomerDetail()
-           {
-               try
-               {
-                   dynamic jsonString = _customerService.GetAllCustomerDetail();
-                   return Ok(jsonString);
-               }
-               catch (Exception e)
-               {
-                   throw e;
-               }
-           }
-   */
+      [HttpGet]
+        public IActionResult AllCustomerDetail()
+        {
+            try
+            {
+                dynamic jsonString = _customerService.GetAllCustomerDetail();
+                return Ok(jsonString);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
 
 
     }
