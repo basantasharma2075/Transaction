@@ -41,7 +41,7 @@ namespace Transaction.Application.Service.Person
                 var jsonNew = JsonConvert.SerializeObject(person);
                 var command = connection.CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "SpPersonInsertTsk";
+                command.CommandText = "SpEmployeeInsertTsk";
                 command.Parameters.Add("@json", SqlDbType.NChar).Value = jsonNew;
                 command.CommandTimeout = _comdTimeout;
 

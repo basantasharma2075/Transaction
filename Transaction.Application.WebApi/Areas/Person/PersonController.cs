@@ -18,7 +18,7 @@ namespace Transaction.Application.WebApi.Areas.Person
         }
 
         [HttpPost]
-        public IActionResult AddPerson([FromBody] MvPerson person)
+        public IActionResult AddEmployee([FromBody] MvPerson person)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Transaction.Application.WebApi.Areas.Person
 
 
         [HttpPost]
-        public IActionResult UpdatePerson([FromBody] MvPersonUpdate personUpdate)
+        public IActionResult UpdateEmployee([FromBody] MvPersonUpdate personUpdate)
         {
             try
             {
