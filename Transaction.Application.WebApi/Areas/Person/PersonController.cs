@@ -60,12 +60,12 @@ namespace Transaction.Application.WebApi.Areas.Person
 
 
 
-  //      [HttpGet]
-     /*   public IActionResult AllCustomerDetail()
+        [HttpGet]
+        public IActionResult AllEmpoyeeDetail()
         {
             try
             {
-                dynamic jsonString = _customerService.GetAllCustomerDetail();
+                dynamic jsonString = _personService.GetAllPersonDetail();
                 return Ok(jsonString);
             }
             catch (Exception e)
@@ -73,7 +73,7 @@ namespace Transaction.Application.WebApi.Areas.Person
                 throw e;
             }
         }
-*/
+
 
 
     }

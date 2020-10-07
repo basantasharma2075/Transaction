@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Text;
 using Transaction.Application.DataAccess;
 using Transaction.Application.Model.Person;
@@ -61,7 +62,37 @@ namespace Transaction.Application.Service.Person
 
         public dynamic GetAllPersonDetail()
         {
-            throw new NotImplementedException();
+            using (var con = _dah.GetConnection())
+            {
+                var cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                //dynamic jsonNew = JsonConvert.DeserializeObject(json);
+                cmd.CommandText = "SpEmployeeSel";
+                cmd.CommandTimeout = _comdTimeout;
+
+                using (SqlDataReader sqldr = cmd.ExecuteReader())
+                {
+                    try
+                    {
+                        if (sqldr.HasRows)
+                        {
+                            return _dah.GetJson(sqldr);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+
+
+            }
+
+
         }
 
         public bool UpdatePerson(MvPersonUpdate personUpdate)
