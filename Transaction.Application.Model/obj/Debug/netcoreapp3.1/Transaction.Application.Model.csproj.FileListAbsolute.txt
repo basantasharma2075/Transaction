@@ -1,0 +1,13 @@
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\bin\Debug\netcoreapp3.1\Transaction.Application.Model.exe
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\bin\Debug\netcoreapp3.1\Transaction.Application.Model.deps.json
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\bin\Debug\netcoreapp3.1\Transaction.Application.Model.runtimeconfig.json
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\bin\Debug\netcoreapp3.1\Transaction.Application.Model.runtimeconfig.dev.json
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\bin\Debug\netcoreapp3.1\Transaction.Application.Model.dll
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\bin\Debug\netcoreapp3.1\Transaction.Application.Model.pdb
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\obj\Debug\netcoreapp3.1\Transaction.Application.Model.csprojAssemblyReference.cache
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\obj\Debug\netcoreapp3.1\Transaction.Application.Model.AssemblyInfoInputs.cache
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\obj\Debug\netcoreapp3.1\Transaction.Application.Model.AssemblyInfo.cs
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\obj\Debug\netcoreapp3.1\Transaction.Application.Model.csproj.CoreCompileInputs.cache
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\obj\Debug\netcoreapp3.1\Transaction.Application.Model.dll
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\obj\Debug\netcoreapp3.1\Transaction.Application.Model.pdb
+H:\Aqore\Transaction\Transaction\Transaction.Application.Model\obj\Debug\netcoreapp3.1\Transaction.Application.Model.genruntimeconfig.cache
