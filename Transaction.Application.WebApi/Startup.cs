@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Transaction.Application.Service.Customer;
 using Transaction.Application.Service.Person;
 
 namespace Transaction.Application.WebApi
@@ -42,6 +43,7 @@ namespace Transaction.Application.WebApi
             services.AddControllers();
 
             services.AddTransient<IPersonService, PersonService>();
+            services.AddTransient<ICustomerService, CustomerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
