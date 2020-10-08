@@ -1,0 +1,41 @@
+<h1>Job Details</h1>
+
+<div>
+  <button mat-raised-button (click)="addJob()" color="primary"> Add Job</button>
+  <button mat-raised-button (click)="editJob()" color="warn" class="ml-3">Edit Job</button>
+<br>
+<br>
+  <h4>Available Job</h4>
+   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="JobId">
+      <mat-header-cell *matHeaderCellDef> JobId </mat-header-cell>
+      <mat-cell *matCellDef="let JobDetail"> {{JobDetail.JobId}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="JobTitle">
+      <mat-header-cell *matHeaderCellDef> JobTitle </mat-header-cell>
+      <mat-cell *matCellDef="let JobDetail"> {{JobDetail.JobTitle}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="CustomerId">
+      <mat-header-cell *matHeaderCellDef> CustomerId </mat-header-cell>
+      <mat-cell *matCellDef="let JobDetail"> {{JobDetail.CustomerId}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="PayPerHour">
+      <mat-header-cell *matHeaderCellDef> PayPerHour </mat-header-cell>
+      <mat-cell *matCellDef="let JobDetail"> {{JobDetail.PayPerHour}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow($event, row)"
+    [ngClass]="{hovered: row.hovered, highlighted: selection.isSelected(row)}" (mouseover)="row.hovered = true"
+    (mouseout)="row.hovered = false">
+
+    </mat-row>
+
+  </mat-table>
+  <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;"> {{userMessage}}</span>
+</div>
+
+

@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>{{action}} job</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]='jobForm'>
+
+      <mat-form-field  class="full-width">
+        <input matInput type="text" placeholder="JobTitle*" formControlName='JobTitle' >
+    </mat-form-field>
+     
+        <mat-form-field class="full-width">
+            <mat-label>Customer</mat-label>
+            <mat-select formControlName="CustomerId">
+                <mat-option *ngFor="let c of customers" [value]="c.value">
+                {{c.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field  class="full-width">
+          <input matInput type="number" placeholder="PayPerHour*" formControlName='PayPerHour' >
+      </mat-form-field>
+
+      
+    </form>
+   
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)='cancelClick()'>Cancel</button>
+    <button mat-button (click)='submitForm()' [disabled]='!jobForm.valid'>{{action}}</button>
+</div>

@@ -11,7 +11,7 @@ namespace Transaction.Application.Model.Job
         public string JobTitle { get; set; }
 
         [Required]
-        public string OrganizationId { get; set; }
+        public string CustomerId { get; set; }
 
         [Required]
         public string PayPerHour { get; set; }
@@ -26,7 +26,7 @@ namespace Transaction.Application.Model.Job
         public string JobTitle { get; set; }
 
         [Required]
-        public string OrganizationId { get; set; }
+        public string CustomerId { get; set; }
 
         [Required]
         public string PayPerHour { get; set; }
