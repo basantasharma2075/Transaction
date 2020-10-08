@@ -14,16 +14,19 @@ const appRoutes: Routes = [
   {
     path: 'employee',
     loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
+  },
+  {
+    path: 'customer',
+    loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
   }
 ];
 
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
     NavMenuComponent,
-    HomeComponent
-   ],
+    HomeComponent   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
