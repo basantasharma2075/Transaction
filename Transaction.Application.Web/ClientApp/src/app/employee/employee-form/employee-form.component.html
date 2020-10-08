@@ -1,0 +1,40 @@
+<div class="form-container">
+  <mat-toolbar color="primary">{{action}} Employee</mat-toolbar>
+  <form class="employee-form" [formGroup]="employeeForm">
+    
+    <mat-form-field appearance="fill">
+      <label><b>FirstName : </b></label>
+      <input matInput formControlName="FirstName" [(ngModel)]="selectedEmployee.FirstName" placeholder="FirstName" required >
+      <mat-error *ngIf="employeeForm.controls['FirstName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <label><b>LastName : </b></label>
+      <input matInput formControlName="LastName" [(ngModel)]="selectedEmployee.LastName" placeholder="LastName" required>
+      <mat-error *ngIf="employeeForm.controls['LastName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <label><b>Address : </b></label>
+      <input matInput formControlName="Address" [(ngModel)]="selectedEmployee.Address" placeholder="Address" required>
+      <mat-error *ngIf="employeeForm.controls['Address'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <label><b>Phone : </b></label>
+      <input matInput formControlName="Phone" [(ngModel)]="selectedEmployee.Phone" placeholder="Phone" required>
+      <mat-error *ngIf="employeeForm.controls['Phone'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <label><b>Email : </b></label>
+      <input matInput formControlName="Email" [(ngModel)]="selectedEmployee.Email" placeholder="Email" required>
+      <mat-error *ngIf="employeeForm.controls['Email'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+  </form>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="employeeForm.invalid">Save</button>
+    <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+  </div>
+</div>
