@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
-import { TransactionComponent } from './transaction.component';
-import { TransactionService } from './transaction.service';
+import { InvoiceComponent } from './invoice.component';
+import { InvoiceService } from './invoice.service';
 import {CdkTableModule} from '@angular/cdk/table';
-import { TransactionFormComponent } from './transaction-form/transaction-form.component';
+import { InvoiceFormComponent } from './invoice-form/invoice-form.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,7 +20,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 const routes: Routes = [
     {
         path: '',
-        component: TransactionComponent
+        component: InvoiceComponent
     }
 ];
 
@@ -43,18 +43,18 @@ const routes: Routes = [
         MatCheckboxModule
     ],
     entryComponents: [
-        TransactionFormComponent
+        InvoiceFormComponent
     ],
 
     declarations: [
-        TransactionComponent,
-        TransactionFormComponent
+        InvoiceComponent,
+        InvoiceFormComponent
 
     ],
     providers: [
-        TransactionService
+        InvoiceService
     ]
 })
 
-export class TransactionModule {
+export class InvoiceModule {
 }

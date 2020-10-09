@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Transaction.Application.Service.Assignment;
 using Transaction.Application.Service.Customer;
+using Transaction.Application.Service.Invoice;
 using Transaction.Application.Service.Job;
 using Transaction.Application.Service.Person;
 using Transaction.Application.Service.Transaction;
@@ -50,6 +51,7 @@ namespace Transaction.Application.WebApi
             services.AddTransient<IJobService, JobService>();
             services.AddTransient<IAssignmentService, AssignmentService>();
             services.AddTransient<ITransactionService, TransactionService>();
+            services.AddTransient<IInvoiceService, InvoiceService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

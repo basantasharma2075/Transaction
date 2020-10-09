@@ -4,7 +4,6 @@ export interface MvTransaction {
     WorkHours: number;
     PayPerHour: number;
     Amount: number;
-    InvoiceId: number;
     
 
 }

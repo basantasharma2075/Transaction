@@ -24,7 +24,7 @@ export class TransactionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.displayedColumns = ['TransactionId','AssignmentId', 'WorkHours', 'PayPerHour', 'Amount', 'InvoiceId'];
+    this.displayedColumns = ['TransactionId','AssignmentId', 'WorkHours', 'PayPerHour', 'Amount'];
     this.getAllTransactions();
   }
   getAllTransactions() {
@@ -45,14 +45,7 @@ export class TransactionComponent implements OnInit {
     this.openDialog('Add');
   }
 
-  // editTransaction(){
-  //   this.openDialog('Edit');
-  // }
-
    openDialog(action: string){
-  //   if (action === 'Edit' && !this.selection.hasValue()){
-  //     return;
-  //   }
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;

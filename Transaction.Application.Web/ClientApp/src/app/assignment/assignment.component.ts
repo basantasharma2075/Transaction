@@ -24,7 +24,7 @@ export class AssignmentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.displayedColumns = ['AssignmentId','AssignmentName', 'StartDate', 'EndDate', 'EmployeeId','JobId'];
+    this.displayedColumns = ['AssignmentId','AssignmentName', 'StartDate', 'EndDate', 'EmployeeId','JobId', 'Status'];
     this.getAllAssignments();
   }
   getAllAssignments() {
@@ -60,9 +60,6 @@ export class AssignmentComponent implements OnInit {
     dialogConfig.panelClass = 'mat-form-dialog';
     dialogConfig.data = { data: this.selectedAssignment, action: action };
     const dialogRef = this.dialog.open(AssignmentFormComponent, dialogConfig);
-
-
- 
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

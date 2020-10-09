@@ -5,6 +5,7 @@ export interface MvAssignment {
     EndDate: Date;
     EmployeeId: number;
     JobId: number;
+    Status: number;
 }
 
 export interface MvNewAssignment {

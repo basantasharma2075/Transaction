@@ -1,0 +1,48 @@
+<h1>Invoice Details</h1>
+
+<div>
+  <button mat-raised-button (click)="addInvoice()" color="primary"> Add Invoice</button>
+  
+<br>
+<br>
+  <h4>Available Invoice</h4>
+  
+   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="InvoiceId">
+      <mat-header-cell *matHeaderCellDef> InvoiceId </mat-header-cell>
+      <mat-cell *matCellDef="let InvoiceDetail"> {{InvoiceDetail.InvoiceId}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="CustomerId">
+      <mat-header-cell *matHeaderCellDef> CustomerId </mat-header-cell>
+      <mat-cell *matCellDef="let InvoiceDetail"> {{InvoiceDetail.CustomerId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="EmployeeId">
+      <mat-header-cell *matHeaderCellDef> EmployeeId </mat-header-cell>
+      <mat-cell *matCellDef="let InvoiceDetail"> {{InvoiceDetail.EmployeeId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="TransactionId">
+      <mat-header-cell *matHeaderCellDef> TransactionId </mat-header-cell>
+      <mat-cell *matCellDef="let InvoiceDetail"> {{InvoiceDetail.TransactionId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Amount">
+      <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+      <mat-cell *matCellDef="let InvoiceDetail"> {{InvoiceDetail.Amount}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow($event, row)"
+    [ngClass]="{hovered: row.hovered, highlighted: selection.isSelected(row)}" (mouseover)="row.hovered = true"
+    (mouseout)="row.hovered = false">
+
+    </mat-row>
+
+  </mat-table>
+  <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;"> {{userMessage}}</span>
+</div>
+
+

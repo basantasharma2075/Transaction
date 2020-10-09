@@ -38,6 +38,11 @@
       <mat-cell *matCellDef="let AssignmentDetail"> {{AssignmentDetail.JobId}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="Status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let AssignmentDetail"> {{AssignmentDetail.Status}} </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow($event, row)"
     [ngClass]="{hovered: row.hovered, highlighted: selection.isSelected(row)}" (mouseover)="row.hovered = true"

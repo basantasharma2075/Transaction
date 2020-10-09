@@ -6,6 +6,7 @@
 <br>
 <br>
   <h4>Available Transaction</h4>
+  
    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="TransactionId">
       <mat-header-cell *matHeaderCellDef> TransactionId </mat-header-cell>
@@ -32,10 +33,6 @@
       <mat-cell *matCellDef="let TransactionDetail"> {{TransactionDetail.Amount}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="InvoiceId">
-      <mat-header-cell *matHeaderCellDef> InvoiceId </mat-header-cell>
-      <mat-cell *matCellDef="let TransactionDetail"> {{TransactionDetail.InvoiceId}} </mat-cell>
-    </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow($event, row)"

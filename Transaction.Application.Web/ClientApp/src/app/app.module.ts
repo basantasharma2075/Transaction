@@ -30,16 +30,20 @@ const appRoutes: Routes = [
   {
     path: 'transaction',
     loadChildren: () => import('./transaction/transaction.module').then(m => m.TransactionModule)
+  },
+  {
+    path: 'invoice',
+    loadChildren: () => import('./invoice/invoice.module').then(m => m.InvoiceModule)
   }
 ];
 
 
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
     NavMenuComponent,
     HomeComponent
-     ],
+   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
