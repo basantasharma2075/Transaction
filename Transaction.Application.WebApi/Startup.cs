@@ -14,6 +14,7 @@ using Transaction.Application.Service.Assignment;
 using Transaction.Application.Service.Customer;
 using Transaction.Application.Service.Job;
 using Transaction.Application.Service.Person;
+using Transaction.Application.Service.Transaction;
 
 namespace Transaction.Application.WebApi
 {
@@ -48,6 +49,7 @@ namespace Transaction.Application.WebApi
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IJobService, JobService>();
             services.AddTransient<IAssignmentService, AssignmentService>();
+            services.AddTransient<ITransactionService, TransactionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

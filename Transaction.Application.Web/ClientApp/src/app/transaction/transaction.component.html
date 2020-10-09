@@ -1,0 +1,51 @@
+<h1>Transaction Details</h1>
+
+<div>
+  <button mat-raised-button (click)="addTransaction()" color="primary"> Assignment Complete Check</button>
+  
+<br>
+<br>
+  <h4>Available Transaction</h4>
+   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="TransactionId">
+      <mat-header-cell *matHeaderCellDef> TransactionId </mat-header-cell>
+      <mat-cell *matCellDef="let TransactionDetail"> {{TransactionDetail.TransactionId}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="AssignmentId">
+      <mat-header-cell *matHeaderCellDef> AssignmentId </mat-header-cell>
+      <mat-cell *matCellDef="let TransactionDetail"> {{TransactionDetail.AssignmentId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="WorkHours">
+      <mat-header-cell *matHeaderCellDef> WorkHours </mat-header-cell>
+      <mat-cell *matCellDef="let TransactionDetail"> {{TransactionDetail.WorkHours}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="PayPerHour">
+      <mat-header-cell *matHeaderCellDef> PayPerHour </mat-header-cell>
+      <mat-cell *matCellDef="let TransactionDetail"> {{TransactionDetail.PayPerHour}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Amount">
+      <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+      <mat-cell *matCellDef="let TransactionDetail"> {{TransactionDetail.Amount}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="InvoiceId">
+      <mat-header-cell *matHeaderCellDef> InvoiceId </mat-header-cell>
+      <mat-cell *matCellDef="let TransactionDetail"> {{TransactionDetail.InvoiceId}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow($event, row)"
+    [ngClass]="{hovered: row.hovered, highlighted: selection.isSelected(row)}" (mouseover)="row.hovered = true"
+    (mouseout)="row.hovered = false">
+
+    </mat-row>
+
+  </mat-table>
+  <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;"> {{userMessage}}</span>
+</div>
+
+

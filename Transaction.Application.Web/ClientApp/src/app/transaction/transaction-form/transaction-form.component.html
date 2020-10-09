@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>{{action}} Transaction</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]='transactionForm'>
+
+      <mat-form-field  class="full-width">
+        <input matInput type="number" placeholder="WorkHours*" formControlName='WorkHours' >
+    </mat-form-field>
+     
+        <mat-form-field class="full-width">
+            <mat-label>AssignmentId</mat-label>
+            <mat-select formControlName="AssignmentId">
+                <mat-option *ngFor="let c of assignments" [value]="c.value">
+                {{c.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field  class="full-width">
+          <input matInput type="number" placeholder="PayPerHour*" formControlName='PayPerHour' >
+      </mat-form-field>
+
+      
+    </form>
+   
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)='cancelClick()'>Cancel</button>
+    <button mat-button (click)='submitForm()' [disabled]='!transactionForm.valid'>{{action}}</button>
+</div>

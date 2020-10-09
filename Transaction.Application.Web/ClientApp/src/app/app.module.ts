@@ -26,15 +26,20 @@ const appRoutes: Routes = [
   {
     path: 'assignment',
     loadChildren: () => import('./assignment/assignment.module').then(m => m.AssignmentModule)
+  },
+  {
+    path: 'transaction',
+    loadChildren: () => import('./transaction/transaction.module').then(m => m.TransactionModule)
   }
 ];
 
 
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
     NavMenuComponent,
-    HomeComponent   ],
+    HomeComponent
+     ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
