@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>{{action}} assignment</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]='assignmentForm'>
+
+      <mat-form-field  class="full-width">
+        <input matInput type="text" placeholder="AssignmentName*" formControlName='AssignmentName' >
+    </mat-form-field>
+
+    <mat-form-field  class="full-width">
+      <input matInput type="text" placeholder="StartDate*" formControlName='StartDate' >
+  </mat-form-field>
+
+  <mat-form-field  class="full-width">
+    <input matInput type="text" placeholder="EndDate*" formControlName='EndDate' >
+</mat-form-field>
+     
+        <mat-form-field class="full-width">
+            <mat-label>EmployeeId</mat-label>
+            <mat-select formControlName="EmployeeId">
+                <mat-option *ngFor="let c of employees" [value]="c.value">
+                {{c.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>JobId</mat-label>
+          <mat-select formControlName="JobId">
+              <mat-option *ngFor="let c of jobs" [value]="c.value">
+              {{c.viewValue}}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+    </form>
+   
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)='cancelClick()'>Cancel</button>
+    <button mat-button (click)='submitForm()' [disabled]='!assignmentForm.valid'>{{action}}</button>
+</div>
